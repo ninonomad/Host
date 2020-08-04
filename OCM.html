@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Coin Ticker</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="root"></tbody>
+    </table>
+    <script type="text/babel">
+
+/*
+function Coin(props){
+    return(
+        <tr>
+            <td>{props.name}</td>
+            <td>{props.ticker}</td>
+            <td>{props.price}</td>
+        </tr>
+    );
+}
+*/
+
+// functional components for shorter code 
+const Coin = ({name, ticker, price}) => (
+        <tr>
+            <td>{name}</td>
+            <td>{ticker}</td>
+            <td>{price}</td>
+        </tr>
+    );
+
+ReactDOM.render(
+    <React.Fragment>
+        <Coin name="Bitcoin" ticker="BTC" price="9999.99" />
+        <Coin name="Ethereum" ticker="ETH" price="299.99" />
+        <Coin name="IOTA" ticker="MIOTA" price="0.30" />
+        </React.Fragment>,
+    document.getElementById("root")
+);
+
+    </script>
+</body>
+</html>
